@@ -2,12 +2,12 @@
 #stuff=abc.split()
 #print(stuff)
 
-#x= DFGEG@naver.com
+x= "DFGEG@naver.com"
 
-#words =x.split('@')
-#email=words[1]
-#pieces =email.split('@')
-#print(words)
+words =x.split('@')
+email=words[1]
+pieces =email.split('@')
+print(words)
 
 #x=[1,3,2]
 #x.sort()
