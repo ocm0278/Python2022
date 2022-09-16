@@ -1,0 +1,27 @@
+max.temp<-max(airquality$Temp)
+
+# 실습
+# 
+# - airquality 데이터셋에 대해 다음을 처리하세요.
+# 
+# 1. 기온(Temp)이 가장 높은 날은 언제인지 월과 일을 추출
+#    기온의 최대값을 구해서 변수에 저장하고 조건식 사용
+airquality[airquality$Temp ==  max.temp        , c(5,6,4)         ]
+subset(airquality,max.temp ==Temp,select = c("Month","Day","Temp"))
+# 2. 6월달에 발생한 가장 강한 바람(Wind)의 세기를 추출
+#    바람의 최대값을 변수에 저장하여 조건식 사용
+max.wind6 <- max(airquality[airquality$Month==6   , c(3)   ])
+airquality[airquality$Wind==max.wind6  , ]
+# 3. 7월달의 평균기온을 추출
+#    평균함수 사용
+mean(airquality[ airquality$Month==7   ,   c(4)])
+
+# 4. NA를 제외한 5월의 평균 오존 농도 추출
+#    NA 가 아닌 값을 구하는 함수 사용하거나 평균함수에서 속성으로 NA 제거
+mean(airquality[airquality$Month==5 , c(1)],na.rm=T)
+# 5. 오존 농도가 100을 넘는 날은 며칠인지 추출
+#    행 수를 구하는 함수 사용
+nrow(airquality[airquality$Ozone > 100 & !is.na(airquality$Ozone) ,  ])
+nrow(subset(airquality, Ozone >100))
+# nrow 행 갯수 구하는 함수
+  
