@@ -1,0 +1,15 @@
+getwd()
+setwd("C:/BigdataR/Part-III")
+data<-read.csv("descriptive.csv",header=TRUE)
+head(data)
+dim(data)
+length(data)
+str(data)
+summary(data)
+table(data$gender)
+data<-subset(data,gender==1|gender==2) #성별이 남/여 인 데이터만 추출
+x<-table(data$gender)
+x
+barplot(x)
+y<-prop.table(x)
+round(y*100.2)
